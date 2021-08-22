@@ -116,7 +116,7 @@ public class Car implements Vehicle, Alarm {
 }
 ```
 
-* or we can use one of the two default implementation while overriding, or both
+* or we can use one of the two default implementation while overriding, or both.
 
 ```java
 public class Car implements Vehicle, Alarm {
@@ -133,6 +133,30 @@ public class Car implements Vehicle, Alarm {
 ```
 
 ## Static Method
+
+* since static methods don't belong to a particular object, they are not part of the API of the classes implementing the interface, and they have to be called by using the interface name preceding the method name.
+* defining a static method within an interface is identical to defining one in a class.
+* a static method can be invoked within other static and default methods.
+* The idea behind static interface methods is to provide a simple mechanism that allows us to increase the degree of cohesion of a design by putting together related methods in one single place without having to create an object.
+* the same can be done with abstract classes. The main difference lies in the fact that abstract classes can have constructors, state, and behavior.
+* static methods in interfaces make possible to group related utility methods, without having to create artificial utility classes that are simply placeholders for static methods.
+
+```java
+public interface Vehicle {
+    
+    // regular / default interface methods
+    
+    static int getHorsePower(int rpm, int torque) {
+        return (rpm * torque) / 5252;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) { 
+        Vehicle.getHorsePower(2500, 480));
+    }
+}
+```
 
 ## Ref
 * https://www.baeldung.com/java-static-default-methods
