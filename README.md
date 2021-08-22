@@ -7,9 +7,9 @@
 * allow us to add new methods to an interface that are automatically available in the implementations.
 * there's no need to modify the implementing classes.
 * In this way, backward compatibility is neatly preserved without having to refactor the implementers.
+* The most typical use of default methods in interfaces is to incrementally provide additional functionality to a given type without breaking down the implementing classes.
 
 ```java
-
 public interface Vehicle {
     
     String getBrand();
